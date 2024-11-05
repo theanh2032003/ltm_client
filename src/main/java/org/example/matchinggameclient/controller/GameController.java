@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -135,8 +137,11 @@ public class GameController {
 
     private void showCard(Button card) {
         Card cardData = (Card) card.getUserData();
-        card.setText(String.valueOf(cardData.getId())); // Show card id
-        card.setDisable(true); // Disable card to prevent re-clicking
+        ImageView imageView = new ImageView(new Image(cardData.getImage()));
+        imageView.setFitWidth(96); // Điều chỉnh kích thước ảnh cho phù hợp với thẻ
+        imageView.setFitHeight(144);
+        card.setGraphic(imageView);
+        card.setDisable(true);
     }
 
     private void checkForMatch() {

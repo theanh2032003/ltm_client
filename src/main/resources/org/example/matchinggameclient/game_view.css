@@ -62,6 +62,8 @@
 .button-card {
     -fx-min-width: 96;
     -fx-min-height: 144;
+    -fx-max-width: 96;
+    -fx-max-height: 144;
     -fx-background-radius: 10;
     -fx-background-color: #f2f3e3 ;
     -fx-background-image: url(img/back.jpg);
